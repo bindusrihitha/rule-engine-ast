@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rule Engine</title>
+</head>
+<body>
+    <h1>Rule Engine Input</h1>
+    <form action="/" method="POST">  <!-- Updated action to match Flask route -->
+        <label for="rule_name">Rule Name:</label><br>
+        <input type="text" id="rule_name" name="rule_name" required><br><br>
+        
+        <label for="rule_condition">Rule Condition:</label><br>
+        <textarea id="rule_condition" name="rule_condition" required></textarea><br><br>
+
+        <label for="rule_action">Rule Action:</label><br>
+        <textarea id="rule_action" name="rule_action" required></textarea><br><br>
+
+        <input type="submit" value="Submit Rule">
+    </form>
+
+    {% if result is not none %}
+        <h2>Evaluation Result:</h2>
+        <p>{{ result }}</p>
+    {% endif %}
+</body>
+</html>
